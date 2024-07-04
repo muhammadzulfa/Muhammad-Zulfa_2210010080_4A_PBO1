@@ -47,19 +47,23 @@ public class Main {
                         // Menemukan record produk dari inventaris berdasarkan ID
                         Produk produk = inventaris.getProdukById(idProduk);
 
-                        System.out.print("Masukkan jumlah: ");
+                        if (produk != null) {
+                            System.out.print("Masukkan jumlah: ");
 
-                        int jumlah = scanner.nextInt();
-                        if (jumlah <= produk.getStok()) {
-                            // Tambahkan pesanan ke keranjang
-                            keranjang.tambahPesanan(new Pesanan(idProduk, produk, jumlah));
+                            int jumlah = scanner.nextInt();
+                            if (jumlah <= produk.getStok()) {
+                                // Tambahkan pesanan ke keranjang
+                                keranjang.tambahPesanan(new Pesanan(idProduk, produk, jumlah));
 
-                            // Kurangi stok pada produk
-                            produk.kurangiStok(jumlah);
+                                // Kurangi stok pada produk
+                                produk.kurangiStok(jumlah);
 
-                            System.out.println("Produk telah ditambahkan ke keranjang.");
+                                System.out.println("Produk telah ditambahkan ke keranjang.");
+                            } else {
+                                System.out.println("Stok tidak mencukupi.");
+                            }
                         } else {
-                            System.out.println("Stok tidak mencukupi.");
+                            System.out.println("Produk tidak ditemukan.");
                         }
                         break;
                     case 3:
