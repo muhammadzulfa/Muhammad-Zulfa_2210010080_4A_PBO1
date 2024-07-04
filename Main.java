@@ -4,6 +4,7 @@ import Class.Inventaris;
 import Class.Keranjang;
 import Class.Pesanan;
 import Class.Produk;
+import Helper.MyHelper;
 
 // Class Main
 public class Main {
@@ -86,7 +87,7 @@ public class Main {
                         break;
                     case 5:
                         // Memproses pembayaran
-                        double totalHarga = keranjang.hitungTotalHarga();
+                        String totalHarga = MyHelper.formatIDR(keranjang.hitungTotalHarga());
                         keranjang.hapusSeluruhPesanan();
 
                         System.out.println("Total Harga: " + totalHarga);

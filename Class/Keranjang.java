@@ -2,6 +2,8 @@ package Class;
 
 import java.util.ArrayList;
 
+import Helper.MyHelper;
+
 // Class Keranjang
 public class Keranjang {
     private ArrayList<Pesanan> daftarPesanan;
@@ -35,7 +37,7 @@ public class Keranjang {
                 System.out.println("ID: " + pesanan.getId() +
                         ", Nama Produk: " + pesanan.getProduk().getNama() +
                         ", Jumlah: " + pesanan.getJumlah() +
-                        ", Total Harga: " + pesanan.getTotalHarga());
+                        ", Total Harga: " + MyHelper.formatIDR(pesanan.getTotalHarga()));
             }
         }
     }

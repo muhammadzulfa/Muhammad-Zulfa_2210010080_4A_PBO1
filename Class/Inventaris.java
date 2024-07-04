@@ -2,6 +2,8 @@ package Class;
 
 import java.util.ArrayList;
 
+import Helper.MyHelper;
+
 // Class Inventaris
 public class Inventaris {
     private ArrayList<Produk> daftarProduk;
@@ -21,8 +23,8 @@ public class Inventaris {
         for (Produk produk : daftarProduk) {
             System.out.println("ID: " + produk.getId() +
                     ", Nama: " + produk.getNama() +
-                    ", Harga: " + produk.getHarga()
-                    + ", Stok: " + produk.getStok());
+                    ", Harga: " + MyHelper.formatIDR(produk.getHarga()) +
+                    ", Stok: " + produk.getStok());
         }
     }
 

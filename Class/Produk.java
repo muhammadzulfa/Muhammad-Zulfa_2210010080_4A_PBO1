@@ -1,5 +1,8 @@
 package Class;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 // Class Produk
 public class Produk {
     private int id;
