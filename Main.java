@@ -86,6 +86,11 @@ public class Main {
                         break;
                     case 5:
                         // Memproses pembayaran
+                        double totalHarga = keranjang.hitungTotalHarga();
+                        keranjang.hapusSeluruhPesanan();
+
+                        System.out.println("Total Harga: " + totalHarga);
+                        System.out.println("Pembayaran berhasil.");
                         break;
                     case 6:
                         // Keluar dari program

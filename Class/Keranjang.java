@@ -63,4 +63,19 @@ public class Keranjang {
 
         return null; // Hanya sebagai fallback, ini seharusnya tidak pernah tercapai
     }
+
+    // Menghapus seluruh pesanan dari keranjang
+    public void hapusSeluruhPesanan() {
+        daftarPesanan.clear();
+    }
+
+    // Menghitung total harga dari seluruh pesanan
+    public double hitungTotalHarga() {
+        double total = 0;
+        for (Pesanan pesanan : daftarPesanan) {
+            total += pesanan.getTotalHarga();
+        }
+
+        return total;
+    }
 }
