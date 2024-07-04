@@ -87,6 +87,11 @@ public class Main {
                         break;
                     case 5:
                         // Memproses pembayaran
+                        if (keranjang.count() == 0) {
+                            System.out.println("Tidak ada pembayaran yang perlu diproses.");
+                            break;
+                        }
+
                         String totalHarga = MyHelper.formatIDR(keranjang.hitungTotalHarga());
                         keranjang.hapusSeluruhPesanan();
 

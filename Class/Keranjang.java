@@ -80,4 +80,15 @@ public class Keranjang {
 
         return total;
     }
+
+    // Menghitung total array pesanan
+    @SuppressWarnings("unused")
+    public int count() {
+        int count = 0;
+        for (Pesanan pesanan : daftarPesanan) {
+            count += 1;
+        }
+
+        return count;
+    }
 }
