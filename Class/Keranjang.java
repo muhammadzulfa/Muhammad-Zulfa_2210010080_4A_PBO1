@@ -28,11 +28,15 @@ public class Keranjang {
 
     // Menampilkan isi keranjang
     public void tampilkanKeranjang() {
-        for (Pesanan pesanan : daftarPesanan) {
-            System.out.println("ID: " + pesanan.getId() +
-                    ", Nama Produk: " + pesanan.getProduk().getNama() +
-                    ", Jumlah: " + pesanan.getJumlah() +
-                    ", Total Harga: " + pesanan.getTotalHarga());
+        if (daftarPesanan.isEmpty()) {
+            System.out.println("Keranjang sedang kosong.");
+        } else {
+            for (Pesanan pesanan : daftarPesanan) {
+                System.out.println("ID: " + pesanan.getId() +
+                        ", Nama Produk: " + pesanan.getProduk().getNama() +
+                        ", Jumlah: " + pesanan.getJumlah() +
+                        ", Total Harga: " + pesanan.getTotalHarga());
+            }
         }
     }
 }

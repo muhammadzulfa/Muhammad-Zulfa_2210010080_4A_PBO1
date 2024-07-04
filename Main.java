@@ -34,6 +34,8 @@ public class Main {
                 System.out.print("Pilih opsi menu: ");
                 int pilihan = scanner.nextInt();
 
+                System.out.print("\n");
+
                 switch (pilihan) {
                     case 1:
                         // Menampilkan daftar produk
@@ -58,7 +60,8 @@ public class Main {
                                 // Kurangi stok pada produk
                                 produk.kurangiStok(jumlah);
 
-                                System.out.println("Produk telah ditambahkan ke keranjang.");
+                                System.out.println("\nDaftar produk di Keranjang sekarang:");
+                                keranjang.tampilkanKeranjang();
                             } else {
                                 System.out.println("Stok tidak mencukupi.");
                             }
@@ -84,6 +87,8 @@ public class Main {
                         System.out.println("Opsi tidak valid.");
                         break;
                 }
+
+                System.out.print("\n");
             } catch (Exception e) {
                 // Penanganan kesalahan
                 System.out.println("Terjadi kesalahan: " + e.getMessage());
