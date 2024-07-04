@@ -61,7 +61,8 @@ public class Main {
                                 // Kurangi stok pada produk
                                 produk.kurangiStok(jumlah);
 
-                                System.out.println("\nDaftar produk di Keranjang sekarang:");
+                                System.out.println(
+                                        "\nProduk telah ditambahkan ke Keranjang. Daftar produk di Keranjang sekarang:");
                                 keranjang.tampilkanKeranjang();
                             } else {
                                 System.out.println("Stok tidak mencukupi.");
@@ -80,7 +81,9 @@ public class Main {
 
                         int idPesanan = scanner.nextInt();
                         if (keranjang.hapusPesanan(idPesanan) == true) {
-                            System.out.println("Pesanan telah dihapus dari keranjang.");
+                            System.out.println(
+                                    "\nProduk telah dihapus dari Keranjang. Daftar produk di Keranjang sekarang:");
+                            keranjang.tampilkanKeranjang();
                         } else {
                             System.out.println("Pesanan dengan ID " + idPesanan + " tidak ditemukan di keranjang.");
                         }
