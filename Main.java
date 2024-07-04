@@ -75,6 +75,14 @@ public class Main {
                         break;
                     case 4:
                         // Menghapus pesanan dari keranjang
+                        System.out.print("Masukkan ID Pesanan yang ingin dihapus: ");
+
+                        int idPesanan = scanner.nextInt();
+                        if (keranjang.hapusPesanan(idPesanan) == true) {
+                            System.out.println("Pesanan telah dihapus dari keranjang.");
+                        } else {
+                            System.out.println("Pesanan dengan ID " + idPesanan + " tidak ditemukan di keranjang.");
+                        }
                         break;
                     case 5:
                         // Memproses pembayaran

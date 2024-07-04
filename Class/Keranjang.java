@@ -39,4 +39,28 @@ public class Keranjang {
             }
         }
     }
+
+    // Menghapus pesanan dari keranjang
+    public Boolean hapusPesanan(int id) {
+        /*
+         * Method ini akan mengembalikan antara nilai true atau false
+         * True = record ditemukan dan berhasil dihapus
+         * False = record tidak ditemukan
+         */
+
+        boolean found = false;
+        for (Pesanan pesanan : daftarPesanan) {
+            if (pesanan.getId() == id) {
+                found = true;
+                daftarPesanan.remove(pesanan);
+                return true;
+            }
+        }
+
+        if (!found) {
+            return false;
+        }
+
+        return null; // Hanya sebagai fallback, ini seharusnya tidak pernah tercapai
+    }
 }
