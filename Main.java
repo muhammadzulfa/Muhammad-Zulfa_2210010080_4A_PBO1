@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 import Class.Inventaris;
+import Class.Keranjang;
 import Class.Pesanan;
 import Class.Produk;
 
@@ -9,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Inventaris inventaris = new Inventaris();
+        Keranjang keranjang = new Keranjang();
 
         // Tambahkan beberapa produk ke inventaris
         inventaris.tambahProduk(new Produk(1, "Laptop Ideapad Slim 5 Pro", 9500000, 3));
@@ -39,9 +41,30 @@ public class Main {
                         break;
                     case 2:
                         // Menambahkan produk ke keranjang
+                        System.out.print("Masukkan ID Produk: ");
+                        int idProduk = scanner.nextInt();
+
+                        // Menemukan record produk dari inventaris berdasarkan ID
+                        Produk produk = inventaris.getProdukById(idProduk);
+
+                        System.out.print("Masukkan jumlah: ");
+
+                        int jumlah = scanner.nextInt();
+                        if (jumlah <= produk.getStok()) {
+                            // Tambahkan pesanan ke keranjang
+                            keranjang.tambahPesanan(new Pesanan(idProduk, produk, jumlah));
+
+                            // Kurangi stok pada produk
+                            produk.kurangiStok(jumlah);
+
+                            System.out.println("Produk telah ditambahkan ke keranjang.");
+                        } else {
+                            System.out.println("Stok tidak mencukupi.");
+                        }
                         break;
                     case 3:
                         // Menampilkan isi keranjang
+                        keranjang.tampilkanKeranjang();
                         break;
                     case 4:
                         // Menghapus pesanan dari keranjang

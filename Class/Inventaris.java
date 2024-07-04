@@ -25,4 +25,14 @@ public class Inventaris {
                     + ", Stok: " + produk.getStok());
         }
     }
+
+    // Mendapatkan produk berdasarkan ID
+    public Produk getProdukById(int id) {
+        for (Produk produk : daftarProduk) {
+            if (produk.getId() == id) {
+                return produk;
+            }
+        }
+        return null;
+    }
 }

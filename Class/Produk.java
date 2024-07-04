@@ -31,4 +31,11 @@ public class Produk {
     public int getStok() {
         return stok;
     }
+
+    // Mutator
+    public void kurangiStok(int jumlah) {
+        if (jumlah <= stok) {
+            this.stok -= jumlah;
+        }
+    }
 }
