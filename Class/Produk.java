@@ -1,7 +1,6 @@
 package Class;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
+import Helper.MyHelper;
 
 // Class Produk
 public class Produk {
@@ -33,6 +32,14 @@ public class Produk {
 
     public int getStok() {
         return stok;
+    }
+
+    // Metode untuk mendapatkan deskripsi produk
+    public String displayInfo() {
+        return "ID: " + id +
+                ", Nama: " + nama +
+                ", Harga: " + MyHelper.formatIDR(harga) +
+                ", Stok: " + stok;
     }
 
     // Mutator

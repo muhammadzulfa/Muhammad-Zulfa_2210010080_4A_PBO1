@@ -21,10 +21,7 @@ public class Inventaris {
     // Menampilkan daftar produk
     public void tampilkanProduk() {
         for (Produk produk : daftarProduk) {
-            System.out.println("ID: " + produk.getId() +
-                    ", Nama: " + produk.getNama() +
-                    ", Harga: " + MyHelper.formatIDR(produk.getHarga()) +
-                    ", Stok: " + produk.getStok());
+            System.out.println(produk.displayInfo());
         }
     }
 
